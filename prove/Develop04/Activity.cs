@@ -6,7 +6,7 @@ class Activity
 
     public Activity()
     {
-        
+
     }
     public Activity(string activityName, string description)
     {
@@ -26,25 +26,23 @@ class Activity
     public void EndMessage()
     {
         Console.WriteLine("Good job!");
-        Console.WriteLine($"You have completed {_activityName}");
-        Console.WriteLine($"You spent {_duration} doing this activity");
+        Animation(2);
+        Console.WriteLine($"You have completed {_duration} seconds of {_activityName}.");
+        Animation(2);
     }
 
-    public void Timer()
+    public DateTime Timer()
     {
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
-        if (DateTime.Now < endTime)
-        {
-
-        }
+        return endTime;
     }
 
-    public void Animation()
+    public void Animation(int seconds)
     {
         int sleepTime = 500;
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(2);
+        DateTime endTime = startTime.AddSeconds(seconds);
         while (DateTime.Now < endTime)
         {
             Console.Write("-");
@@ -59,7 +57,18 @@ class Activity
             Console.Write("/");
             Thread.Sleep(sleepTime);
             Console.Write("\b");
-            
+
         }
+        Console.Write("\b");
+        Console.Write(" ");
+    }
+
+    public string RandomPrompt(List<string> list)
+    {
+        Random random = new Random();
+        int length = list.Count();
+        int index = random.Next(0, length);
+        string prompt = list[index];
+        return prompt;
     }
 }

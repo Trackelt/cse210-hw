@@ -9,7 +9,39 @@ class BreathingActivity : Activity
     }
     public void RunBreathing()
     {
+        Console.Clear();
         StartMessage();
+        Console.Clear();
+        Console.WriteLine("Get ready...");
+        Animation(2);
+        Console.WriteLine();
+        DateTime end = Timer();
+        while (DateTime.Now < end)
+        {
+            Console.Write("Breathe in...3");
+            Thread.Sleep(1000);
+            Console.Write("\b");
+            Console.Write("2");
+            Thread.Sleep(1000);
+            Console.Write("\b");
+            Console.Write("1");
+            Thread.Sleep(1000);
+            Console.Write("\b");
+            Console.Write(" ");
+            Console.WriteLine();
+            Console.Write("Breathe out...3");
+            Thread.Sleep(1000);
+            Console.Write("\b");
+            Console.Write("2");
+            Thread.Sleep(1000);
+            Console.Write("\b");
+            Console.Write("1");
+            Thread.Sleep(1000);
+            Console.Write("\b");
+            Console.Write(" ");
+            Console.WriteLine();
+        }
+        EndMessage();
         
     }
 }
