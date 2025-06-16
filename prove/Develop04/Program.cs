@@ -8,6 +8,7 @@ class Program
         
         BreathingActivity myBreathing = new BreathingActivity("Breathing Activity", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.");
         ReflectionActivity myReflection = new ReflectionActivity("Reflection Activity", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.");
+        ListingActivity myListing = new ListingActivity("Listing Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
         while (response != 4)
         {
             Console.Clear();
@@ -29,7 +30,7 @@ class Program
             }
             else if (response == 3)
             {
-
+                myListing.RunListing();
             }
             else if (response == 4)
             {
@@ -37,16 +38,9 @@ class Program
             }
             else
             {
-
+                Console.WriteLine("Please re-enter input");
             }
         }
         
-        
-        
-
-        //Activity myActivity = new Activity("potatos", "are eating food");
-        //Activity myTimer = new Activity();
-        //myActivity.StartMessage();
-        //myActivity.Animation();
     }
 }

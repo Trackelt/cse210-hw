@@ -1,9 +1,5 @@
 class ReflectionActivity : Activity
 {
-
-    List<string> _rPrompt;
-    List<string> _rQuestion;
-
     public ReflectionActivity(string _activityName, string _description)
     : base(_activityName, _description)
     { }
@@ -57,12 +53,38 @@ class ReflectionActivity : Activity
         Console.Clear();
 
         Console.WriteLine();
+
+        List<string> checker = new List<string>();
+        int check = 0;
         DateTime end = Timer();
         while (DateTime.Now < end)
         {
-            Console.Write(RandomPrompt(rQuestions));
-            Animation(5);
-            Console.WriteLine();
+            string i = RandomPrompt(rQuestions);
+            if (checker.Contains(i))
+            {
+                if (check >= 9)
+                {
+                    break;
+                }
+                else { }
+            }
+            else
+            {
+                Console.Write(i);
+                Animation(5);
+                Console.WriteLine();
+    
+                check++;
+            }
+
+            checker.Add(i);
+            //check++;
+
+
+
+            //Console.Write(RandomPrompt(rQuestions));
+            //Animation(5);
+            //Console.WriteLine();
         }
         EndMessage();
     }

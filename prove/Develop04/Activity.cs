@@ -60,7 +60,7 @@ class Activity
 
         }
         Console.Write("\b");
-        Console.Write(" ");
+        Console.Write("  ");
     }
 
     public string RandomPrompt(List<string> list)
@@ -71,4 +71,5 @@ class Activity
         string prompt = list[index];
         return prompt;
     }
+
 }
