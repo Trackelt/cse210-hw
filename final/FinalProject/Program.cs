@@ -4,6 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello FinalProject World!");
+        Character player = new Warrior("PC");
+        Enemy bandit = new Boss("bandit", 100);
+        BattleSystem battle = new BattleSystem(player, bandit);
+        battle.StartBattle();
     }
 }
