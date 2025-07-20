@@ -8,6 +8,9 @@ class Choice
         _prompt = prompt;
         _options = options;
     }
+
+    // This function takes the prompt and the list of options defined elsewhere, and prints out the list
+    // and gets the users response, which can then be used to determine what happens.
     public int GetChoice()
     {
         Console.WriteLine(_prompt);
@@ -17,6 +20,8 @@ class Choice
         }
 
         int choice = 0;
+        // This while loop makes it so that the user has to put in a number in-between
+        // 1 and the number of options.
         while (choice < 1 || choice > _options.Count())
         {
             Console.Write("Enter your choice: ");
@@ -28,6 +33,6 @@ class Choice
                 Console.WriteLine(" Please re-enter input.");
             }
         }
-        return choice -1;
+        return choice - 1;
     }
 }
