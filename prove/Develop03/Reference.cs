@@ -1,11 +1,15 @@
 
 public class Reference
 {
-    
-
-    public string[] SplitVerse(string _verse)
+    private List<string> _references;
+    public Reference(List<string> references)
     {
-        string[] words = _verse.Split(' ');
-        return words;
+        _references = references;
     }
+
+    public List<string> GetRefList()
+    {
+        return _references;
+    }
+
 }
